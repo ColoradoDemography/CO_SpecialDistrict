@@ -11,7 +11,7 @@ This webmap is a tool to view and download GIS data for Special Districts.<br />
 - Get up to date information on contact informatin, mill levy's, and even a direct link to that specific district's DOLA's information page.
 - Download the data in GIS Shapefile format.
 
-The data in this map is updated as we receive information.  See metadata information <a href="https://docs.google.com/spreadsheets/d/1gaOjeXlLzQankggbhtrQq3HDEPfwwiXiPeSZrP6FjOs/edit?usp=sharing" target="_blank">here</a>.  We do not have 100% coverage of districts.  Many rural areas of the Colorado do not yet have GIS capability.  I am more than happy to digitize based off of paper maps, but sometimes even that information is not readily available.  If you have data to contribute, please email: **robert.kemp@state.co.us **
+The data in this map is updated as we receive information.  See metadata information <a href="https://docs.google.com/spreadsheets/d/1gaOjeXlLzQankggbhtrQq3HDEPfwwiXiPeSZrP6FjOs/edit?usp=sharing" target="_blank">here</a>.  We do not have 100% coverage of districts.  Many rural areas of the Colorado do not yet have GIS capability.  I am more than happy to digitize based off of paper maps, but sometimes even that information is not readily available.  If you have data to contribute, please email: **todd.bleess@state.co.us **
 
 ##### Disclaimer:
 The creator (DOLA) and contributors to this project do not guarantee the accuracy of any information presented, are not liable for any errors or omissions and are not responsible for determining fitness for use, either in this map or in its associated data. This data should not be considered an authoritative source of information.
