@@ -922,6 +922,7 @@ var graphicScale = L.control.graphicScale().addTo(map);
             var addurl = "";
             var abbrevname = "";
             var prevname = "";
+            var lastupdate = "";
 
             if (feature.properties.url) {
                 addurl = "<tr><th>URL</th><td>" + feature.properties.url + "</td></tr>";
@@ -932,8 +933,11 @@ var graphicScale = L.control.graphicScale().addTo(map);
             if (feature.properties.prev_name) {
                 prevname = "<tr><th>Previous Name</th><td>" + feature.properties.prev_name + "</td></tr>";
             }
+            if (feature.properties.lastupdate) {
+                lastupdate = "<tr><th>Last Map Update</th><td>" + feature.properties.lastupdate + "</td></tr>";
+            }
 
-            var content = "<br /><table class='table table-striped table-bordered table-condensed'>" + "<tr><th>ID</th><td>" + feature.properties.lgid + "</td></tr>" + "<tr><th>Type</th><td>" + typelookup(feature.properties.lgtypeid) + "</td></tr><tr><th>Status</th><td>" + statuslookup(feature.properties.lgstatusid) + "</td></tr>" + addurl + abbrevname + prevname + "</table><br />";
+            var content = "<br /><table class='table table-striped table-bordered table-condensed'>" + "<tr><th>ID</th><td>" + feature.properties.lgid + "</td></tr>" + "<tr><th>Type</th><td>" + typelookup(feature.properties.lgtypeid) + "</td></tr><tr><th>Status</th><td>" + statuslookup(feature.properties.lgstatusid) + "</td></tr>" + lastupdate + addurl + abbrevname + prevname + "</table><br />";
             var altaddress = "";
 
             if (feature.properties.alt_address) {
