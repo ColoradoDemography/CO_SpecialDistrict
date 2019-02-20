@@ -26,8 +26,8 @@ $.getJSON("https://storage.googleapis.com/co-publicdata/geopts.json", function(g
         districtsbb.push(geopts[i].bbox);
         districtsbb.push(geopts[i].bbox);
     }
-
-    $.getJSON("https://dola.colorado.gov/gis-tmp/limlevy.json", function(json) {
+//https://dola.colorado.gov/gis-tmp/limlevy.jso
+    $.getJSON("https://storage.googleapis.com/co-publicdata/limlevy.json", function(json) {
         limlevy = json;
         init();
 
