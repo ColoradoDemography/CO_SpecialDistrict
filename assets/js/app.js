@@ -975,7 +975,7 @@ var graphicScale = L.control.graphicScale().addTo(map);
 
                     // other tab information
 
-                    $("#featureModal").modal("show");
+                    //$("#featureModal").modal("show");
                     this.bringToBack(); //to deal with overlapping features.  click again and obscured feature is now on top
                 },
                 mouseover: highlightFeature,
