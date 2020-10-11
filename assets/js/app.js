@@ -372,10 +372,10 @@ function init() {
     L.mapbox.accessToken = 'pk.eyJ1Ijoic3RhdGVjb2RlbW9nIiwiYSI6Ikp0Sk1tSmsifQ.hl44-VjKTJNEP5pgDFcFPg';
 
     /* Basemap Layers */
-    var mbstyle = L.mapbox.tileLayer('statecodemog.d47df6dd', {
+    var mbstyle = L.mapbox.tileLayer('statecodemog.map-i4mhpeb3', {
         'zIndex': 1
     });
-    var mbsat = L.mapbox.tileLayer('statecodemog.km7i3g01');
+    var mbsat = L.mapbox.tileLayer('statecodemog.map-392qgzze');
 
 
 /* Basemap Layers */
@@ -402,6 +402,12 @@ var mapquestHYB = L.layerGroup([L.tileLayer("https://{s}.mqcdn.com/tiles/1.0.0/s
         attribution: 'Tiles &copy; Esri &mdash; Source: Esri, DeLorme, NAVTEQ, USGS, Intermap, iPC, NRCAN, Esri Japan, METI, Esri China (Hong Kong), Esri (Thailand), TomTom, 2012'
     });
 
+    var mbAttr = 'Map data &copy; <a href="https://openstreetmap.org">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ';
+    var mbUrl = 'https://{s}.tiles.mapbox.com/v3/{id}/{z}/{x}/{y}.png';
+    
+    mbstyle = L.tileLayer(mbUrl, {id: 'statecodemog.map-i4mhpeb3', attribution: mbAttr});
+    mbsat = L.tileLayer(mbUrl, {id: 'statecodemog.map-392qgzze', attribution: mbAttr});
+    
     map = L.map("map", {
         zoom: 12,
         center: [40, -104.979378],
@@ -415,10 +421,10 @@ var mapquestHYB = L.layerGroup([L.tileLayer("https://{s}.mqcdn.com/tiles/1.0.0/s
 var graphicScale = L.control.graphicScale().addTo(map);
 
     //define labels layer
-    var mblabels = L.mapbox.tileLayer('statecodemog.798453f5', {
+    /*var mblabels = L.mapbox.tileLayer('statecodemog.map-i4mhpeb3', {
         'clickable': false,
         'zIndex': 100
-    });
+    });*/
 
 
 
@@ -501,7 +507,7 @@ var graphicScale = L.control.graphicScale().addTo(map);
 
     var baseLayers = {
         "Mapbox: Satellite": mbsat,
-        "Mapbox: Contrast Base": mbstyle,
+        "Mapbox: Contrast": mbstyle,
         //"Mapquest: Streets": mapquestOSM,
         //"Mapquest: Imagery": mapquestOAM,
         //"Mapquest: Hybrid": mapquestHYB,
