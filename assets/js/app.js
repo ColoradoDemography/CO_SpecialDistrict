@@ -377,6 +377,18 @@ function init() {
     });
     var mbsat = L.mapbox.tileLayer('statecodemog.map-392qgzze');
 
+     var emerald = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+        attribution: '© <a href="https://www.mapbox.com/about/maps/">Mapbox</a> © <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> <strong><a href="https://www.mapbox.com/map-feedback/" target="_blank">Improve this map</a></strong>',
+        tileSize: 512,
+        maxZoom: 18,
+        zoomOffset: -1,
+        id: 'mapbox/outdoors-v11',
+        accessToken: 'pk.eyJ1Ijoic3RhdGVjb2RlbW9nIiwiYSI6Ikp0Sk1tSmsifQ.hl44-VjKTJNEP5pgDFcFPg'
+    });
+
+var nolabel = L.tileLayer('https://api.mapbox.com/styles/v1/statecodemog/ciq0yl9wf000ebpndverm5ler/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1Ijoic3RhdGVjb2RlbW9nIiwiYSI6Ikp0Sk1tSmsifQ.hl44-VjKTJNEP5pgDFcFPg', {
+        attribution: '© <a href="https://www.mapbox.com/about/maps/">Mapbox</a> © <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> <strong><a href="https://www.mapbox.com/map-feedback/" target="_blank">Improve this map</a></strong>'
+    });
 
 /* Basemap Layers */
 var mapquestOSM = L.tileLayer("https://{s}.mqcdn.com/tiles/1.0.0/osm/{z}/{x}/{y}.png", {
@@ -506,8 +518,8 @@ var graphicScale = L.control.graphicScale().addTo(map);
 
 
     var baseLayers = {
-        "Mapbox: Satellite": mbsat,
-        "Mapbox: Contrast": mbstyle,
+        "Mapbox: Emerald": emerald,
+        "Mapbox: Contrast Base": nolabel,
         //"Mapquest: Streets": mapquestOSM,
         //"Mapquest: Imagery": mapquestOAM,
         //"Mapquest: Hybrid": mapquestHYB,
