@@ -423,7 +423,7 @@ var mapquestHYB = L.layerGroup([L.tileLayer("https://{s}.mqcdn.com/tiles/1.0.0/s
     map = L.map("map", {
         zoom: 12,
         center: [40, -104.979378],
-        layers: [nolabel],
+        layers: [Esri_WorldStreetMap],
         minZoom: 6,
         maxZoom: 16,
         zoomControl: false,
