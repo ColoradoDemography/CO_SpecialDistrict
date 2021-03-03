@@ -43,7 +43,7 @@ function init() {
 
     var map, globalbusy, geojsonLayer, lastzoom, active = '1',
         filter = '6',
-        limit = 1000,
+        limit = 5000,
         lgid = "";
     //active = whether to show inactive districts.  Active=0 : show all, including inactive.  Active=1 : show only active
     //filter = comma delimited list of district lgtypes to show  
