@@ -41,7 +41,7 @@ $.getJSON("https://storage.googleapis.com/co-publicdata/geopts.json", function(g
 function init() {
 
 
-    var map, globalbusy, geojsonLayer, lastzoom, active = '1',
+    var map, globalbusy, geojsonLayer, lastzoom, ctf = '0',
         filter = '6',
         limit = 5000,
         lgid = "";
@@ -101,6 +101,7 @@ function init() {
                 .addListener(z, 'change', showhide);
 
             divsec.appendChild(document.createTextNode(" Name or ID"));
+            
 
             var hrbreak = L.DomUtil.create('hr', '', controlUI);
             hrbreak.id = "hrcss";
@@ -125,16 +126,16 @@ function init() {
                 selectUI.appendChild(option);
             });
 
-            //Create the 'Show Inactive Districts' Control
-            //       var chkdiv = L.DomUtil.create('div', '', opt1div);
+            //Create the 'Show CTF Districts' Control
+                   var chkdiv = L.DomUtil.create('div', '', opt1div);
 
-            //       var x = L.DomUtil.create('input', '', chkdiv);
-            //         x.setAttribute("type", "checkbox");
-            //         x.id="ischk";
-            //       var t=document.createTextNode("Show Inactive Districts");
-            //         chkdiv.appendChild(t); 
+                   var x = L.DomUtil.create('input', '', chkdiv);
+                     x.setAttribute("type", "checkbox");
+                     x.id="ischk";
+                   var t=document.createTextNode("Only Show CTF Districts");
+                     chkdiv.appendChild(t); 
 
-            //       x.addEventListener("change", refilter, false);
+                   x.addEventListener("change", refilter, false);
 
 
             var opt2div = L.DomUtil.create('div', '', controlUI);
@@ -225,9 +226,9 @@ function init() {
         }
 
         if (ischecked) {
-            active = '0';
+            ctf = '1';
         } else {
-            active = '1';
+            ctf = '0'; 
         }
 
         ajaxcall();
@@ -279,7 +280,7 @@ function init() {
         //we calculate a bounding box equal much larger than the actual visible map.  This preloades shapes that are off the map.  Combined with the center point query, this will allow us to not have to requery the database on every map movement.
         newbounds = (coord.swlng - diff2) + "," + (coord.swlat - diff1) + "," + (coord.nelng + diff2) + "," + (coord.nelat + diff1);
 
-        geojsonLayer.refresh("https://gis.dola.colorado.gov/sd/districts?limit=" + limit + "&active=" + active + "&filter=" + filter + "&bb=" + newbounds + "&zoom=" + map.getZoom() + lgid); //add a new layer replacing whatever is there
+        geojsonLayer.refresh("https://gis.dola.colorado.gov/sd/districts?limit=" + limit + "&ctf=" + ctf + "&filter=" + filter + "&bb=" + newbounds + "&zoom=" + map.getZoom() + lgid); //add a new layer replacing whatever is there
 
     }
 
