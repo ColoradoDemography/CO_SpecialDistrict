@@ -82,18 +82,19 @@
     <div id="notice" style="display: none;">Feature limit reached.  Zoom in for more detail.</div>
     
     <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-      <div class="container-fluid">
+      <!-- <div class="container-fluid"> -->
         <div class="navbar-header">
-          <div class="navbar-icon-container">
-            <a href="#" class="navbar-icon pull-right visible-xs" id="nav-btn"><i class="fa fa-bars fa-lg white"></i></a>
-            <a href="#" class="navbar-icon pull-right visible-xs" id="sidebar-toggle-btn"><i class="fa fa-search fa-lg white"></i></a>
-          </div>
-          <a class="navbar-brand" href="#">Special Districts</a>
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <h1><a class="navbar-brand" href="#">Special Districts</a></h1>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li><a href="#" data-toggle="collapse" data-target=".navbar-collapse.in" id="about-btn"><i class="fa fa-info-circle white"></i>&nbsp;&nbsp;About</a></li>
-            <li><a href="https://dola.colorado.gov/lgis/" id="about-btn"><i class="fa fa-info-circle white"></i>&nbsp;&nbsp;District Information</a></li>
+            <li><a href="#" data-toggle="collapse" data-target=".navbar-collapse.in" onclick="$('#aboutModal').modal('show'); return false;"><i class="fa fa-question-circle" style="color: white"></i>&nbsp;&nbsp;About</a></li>
+            <!-- <li><a href="https://dola.colorado.gov/lgis/" id="about-btn"><i class="fa fa-info-circle white"></i>&nbsp;&nbsp;District Information</a></li> -->
             <li class="dropdown">
                 <a class="dropdown-toggle" id="downloadDrop" href="#" role="button" data-toggle="dropdown"><i class="fa fa-cloud-download white"></i>&nbsp;&nbsp;Download <b class="caret"></b></a>
                 <ul class="dropdown-menu">
@@ -114,10 +115,10 @@
 
           </ul>
         </div><!--/.navbar-collapse -->
-      </div>
+      <!-- </div> -->
     </div>
 
-    <div id="container">
+    <div id="main">
 
       <div id="map"></div>
     </div>
@@ -144,7 +145,25 @@
             </ul>
             <div class="tab-content" id="aboutTabsContent">
               <div class="tab-pane fade active in" id="about">
-                <p>Colorado contains thousands of governmental entities referred to as 'special districts'.  Currently there is not a single authoritative source for boundary and/or GIS information of these districts.  This project attempts to fill that void.  Please note the disclaimer.  Since many of these district boundaries trace their origin to scanned drawings or digitized PDFs we can not guarantee the accuracy of the data, and as such, these boundaries should not be seen as an authoritative source of information.  </p>
+                <p><a href="https://dola.colorado.gov/lgis/">More information on special districs from the Division of Local Government</a></p>
+                <div class="panel panel-primary">
+                  <div class="panel-heading">Information</div>
+                  <ul class="list-group">
+                    <li class="list-group-item"><p><b>Data:</b>&nbsp;&nbsp;<p>Colorado contains thousands of governmental entities referred to as 'special districts'.  Currently there is not a single authoritative source for boundary and/or GIS information of these districts.  This project attempts to fill that void.  Please note the disclaimer.  Since many of these district boundaries trace their origin to scanned drawings or digitized PDFs we can not guarantee the accuracy of the data, and as such, these boundaries should not be seen as an authoritative source of information.  </p>
+
+                      <p><b>Bootleaf</b> Template developed by <a href="http://bryanmcbride.com/" target="_blank">Bryan McBride</a>.  (<a href="http://bmcbride.github.io/bootleaf/" target="_blank">Bootleaf Github</a>). License: <a href="https://raw.githubusercontent.com/bmcbride/bootleaf/master/LICENSE.txt" target="_blank">MIT</a></p>
+                      <p><b>Leaflet</b> created by <a href="http://agafonkin.com/en" target="_blank">Vladimir Agafonkin</a>.  (<a href="https://github.com/Leaflet/Leaflet/" target="_blank">Leaflet Github</a>). <a href="https://raw.githubusercontent.com/Leaflet/Leaflet/master/LICENSE" target="_blank">License</a></p>
+                        <p><b>JQuery</b> created by <a href="https://jquery.org/" target="_blank">jQuery Foundation</a>.  (<a href="https://github.com/jquery/jquery" target="_blank">JQuery Github</a>). <a href="https://github.com/jquery/jquery/blob/master/LICENSE.txt" target="_blank">License</a></p>
+                        <p><b>Bootstrap</b> created by <a href="https://about.twitter.com/company" target="_blank">Twitter</a>.  (<a href="https://github.com/twbs/bootstrap" target="_blank">Bootstrap Github</a>). License: <a href="https://github.com/twbs/bootstrap/blob/master/LICENSE" target="_blank">MIT</a></p>
+                        <p><b>Mapbox.js</b> created by <a href="https://www.mapbox.com/" target="_blank">Mapbox</a>.  (<a href="https://github.com/mapbox/mapbox.js" target="_blank">Mapbox.js Github</a>). <a href="https://github.com/mapbox/mapbox.js/blob/mb-pages/LICENSE.md" target="_blank">License</a></p>
+                        <p><b>Typeahead</b> created by <a href="https://about.twitter.com/company" target="_blank">Twitter</a>.  (<a href="https://github.com/twitter/typeahead.js" target="_blank">Typeahead Github</a>). <a href="https://github.com/twitter/typeahead.js/blob/master/LICENSE" target="_blank">License</a></p>
+                        <p><b>Leaflet Locate Control</b> created by <a href="http://domoritz.de/" target="_blank">Dominik Moritz</a>.  (<a href="https://github.com/domoritz/leaflet-locatecontrol" target="_blank">Locate Control Github</a>). License: <a href="https://github.com/domoritz/leaflet-locatecontrol/blob/gh-pages/LICENSE" target="_blank">MIT</a></p>
+                        <p><b>Leaflet Grouped Layer Control</b> created by <a href="https://medium.com/@ismyrnow" target="_blank">Ishmael Smyrnow</a>.  (<a href="https://github.com/ismyrnow/Leaflet.groupedlayercontrol" target="_blank">Grouped Layer Control Github</a>). License: <a href="https://github.com/ismyrnow/Leaflet.groupedlayercontrol/blob/gh-pages/MIT-LICENSE.txt" target="_blank">MIT</a></p>
+                       <p><b>Leaflet Ajax</b> created by <a href="http://calvinmetcalf.com/" target="_blank">Calvin Metcalf</a>.  (<a href="https://github.com/calvinmetcalf/leaflet-ajax" target="_blank">Leaflet Ajax Github</a>).  <a href="https://raw.githubusercontent.com/calvinmetcalf/leaflet-ajax/master/license.md" target="_blank">License</a></p>
+                       <p><b>Leaflet Control Geocoder</b> created by <a href="http://www.liedman.net/" target="_blank">Per Liedman</a>.  (<a href="https://github.com/perliedman/leaflet-control-geocoder" target="_blank">Leaflet Control Geocoder Github</a>).  <a href="https://raw.githubusercontent.com/perliedman/leaflet-control-geocoder/master/LICENSE" target="_blank">License</a></p>
+                  </ul>
+                </div>
+              
               </div><!--<p>Limited metadata is available <a href="https://docs.google.com/spreadsheets/d/1gaOjeXlLzQankggbhtrQq3HDEPfwwiXiPeSZrP6FjOs/edit?usp=sharing" target="_blank">here</a>.</p></div>-->
               <div id="disclaimer" class="tab-pane fade text-danger">
                 <p>The creator (DOLA) and contributors to this project do not guarantee the accuracy of any information presented, are not liable for any errors or omissions and are not responsible for determining fitness for use, either in this map or in its associated data. This data should not be considered an authoritative source of information.</p>
@@ -152,9 +171,12 @@
 
             </div>
           </div>
-          <div class="modal-footer">
+          
+
+          
+          <!-- <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          </div>
+          </div> -->
         </div><!-- /.modal-content -->
       </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
@@ -228,7 +250,7 @@
 
     
     <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
     <script src="assets/js/typeahead.jquery.js"></script>    
     <script src="assets/leafletv08/leaflet.js"></script>
     <script src="https://api.mapbox.com/mapbox.js/v2.2.1/mapbox.js"></script>
