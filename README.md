@@ -19,4 +19,4 @@ The creator (DOLA) and contributors to this project do not guarantee the accurac
 ##### Disclaimer in plain English:
 We're trying hard to make this a valuable source of information, however, some of this data is wrong.  Do not use it to determine which districts your house is in (contact your county assessor for that information).
 
-For information on updating the background data, look in [the API repo](https://github.com/ColoradoDemography/Special_Districts_API/blob/master/README.md)https://github.com/ColoradoDemography/Special_Districts_API/blob/master/README.md
+For information on updating the background data, look in (https://github.com/ColoradoDemography/Special_Districts_API/blob/master/README.md)https://github.com/ColoradoDemography/Special_Districts_API/blob/master/README.md
