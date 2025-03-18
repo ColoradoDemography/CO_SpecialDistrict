@@ -933,6 +933,8 @@ var graphicScale = L.control.graphicScale().addTo(map);
                     return "Pending Formation";
                 case '7':
                     return "Pending Dissolution";
+                case '9':
+                    return "Inactive";
             }
 
         }
