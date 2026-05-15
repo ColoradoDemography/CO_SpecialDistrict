@@ -279,8 +279,8 @@ function init() {
 
         //we calculate a bounding box equal much larger than the actual visible map.  This preloades shapes that are off the map.  Combined with the center point query, this will allow us to not have to requery the database on every map movement.
         newbounds = (coord.swlng - diff2) + "," + (coord.swlat - diff1) + "," + (coord.nelng + diff2) + "," + (coord.nelat + diff1);
-console.log("https://gis.dola.colorado.gov/sd/districts?limit=" + limit + "&ctf=" + ctf + "&filter=" + filter + "&bb=" + newbounds + "&zoom=" + map.getZoom() + lgid);
-        geojsonLayer.refresh("https://gis.dola.colorado.gov/sd/districts?limit=" + limit + "&ctf=" + ctf + "&filter=" + filter + "&bb=" + newbounds + "&zoom=" + map.getZoom() + lgid); //add a new layer replacing whatever is there
+console.log("https://gis.dola.colorado.gov/sd/districtstest?limit=" + limit + "&ctf=" + ctf + "&filter=" + filter + "&bb=" + newbounds + "&zoom=" + map.getZoom() + lgid);
+        geojsonLayer.refresh("https://gis.dola.colorado.gov/sd/districtstest?limit=" + limit + "&ctf=" + ctf + "&filter=" + filter + "&bb=" + newbounds + "&zoom=" + map.getZoom() + lgid); //add a new layer replacing whatever is there
 
     }
 
@@ -982,7 +982,7 @@ var graphicScale = L.control.graphicScale().addTo(map);
 
             detailed = detailed + "</table><br />"
 
-            var newlink = "https://dola.colorado.gov/dlg_portal/filings.jsf?id=" + feature.properties.lgid;
+            var newlink = "https://dola.colorado.gov/dlg_lgis_ui_pu/publicLGFilings.jsf?id=" + feature.properties.lgid;
 
             layer.on({
                 click: function(e) {
